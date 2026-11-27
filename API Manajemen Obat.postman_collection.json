@@ -1,0 +1,507 @@
+{
+  "info": {
+    "_postman_id": "399713a2-7672-4889-a18d-821d5a252bb0",
+    "name": "API Manajemen Obat",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60458576",
+    "_collection_link": "https://go.postman.co/collection/60458576-399713a2-7672-4889-a18d-821d5a252bb0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Tes endpoint di Postman",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"Vitamin C 1000mg\",\r\n  \"kategori\": \"Vitamin\",\r\n  \"stok\": 80,\r\n  \"harga\": 8000,\r\n  \"tanggalKadaluarsa\": \"2027-12-01\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search nama",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines?search=para",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "para"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter kategori",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines?kategori=Vitamin",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ],
+          "query": [
+            {
+              "key": "kategori",
+              "value": "Vitamin"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obat kadaluarsa",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines?expired=true",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ],
+          "query": [
+            {
+              "key": "expired",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Stok menipis",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines?stokMax=40",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ],
+          "query": [
+            {
+              "key": "stokMax",
+              "value": "40"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Semua Obat",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines/6b095ecf913262e901c261b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines",
+            "6b095ecf913262e901c261b6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Edit obat",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"Paracetamol 650mg\",\r\n  \"stok\": 100\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines/6b095e93913262e901c261b4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines",
+            "6b095e93913262e901c261b4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Hapus obat",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines/6b095ec8913262e901c261b5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines",
+            "6b095ec8913262e901c261b5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error stok negatif",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"Paracetamol 500mg\",\r\n  \"kategori\": \"Analgesik\",\r\n  \"stok\": -5,\r\n  \"harga\": 5000,\r\n  \"tanggalKadaluarsa\": \"2027-06-30\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error stok bukan angka",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"Paracetamol 500mg\",\r\n  \"kategori\": \"Analgesik\",\r\n  \"stok\": \"banyak\",\r\n  \"harga\": 5000,\r\n  \"tanggalKadaluarsa\": \"2027-06-30\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error body kosong",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error kategori tidak valid",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"Paracetamol 500mg\",\r\n  \"kategori\": \"Permen\",\r\n  \"stok\": 100,\r\n  \"harga\": 5000,\r\n  \"tanggalKadaluarsa\": \"2027-06-30\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error format ID salah",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines/abc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines",
+            "abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error ID tidak ditemukan",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines/64b7f0c2a1b2c3d4e5f6a7b8",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines",
+            "64b7f0c2a1b2c3d4e5f6a7b8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Error stokMax bukan angka",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines?stokMax=abc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ],
+          "query": [
+            {
+              "key": "stokMax",
+              "value": "abc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tambah obat",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"Paracetamol 500mg\",\r\n  \"kategori\": \"Analgesik\",\r\n  \"stok\": 120,\r\n  \"harga\": 5000,\r\n  \"tanggalKadaluarsa\": \"2027-06-30\",\r\n  \"deskripsi\": \"Pereda nyeri dan penurun demam\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tambah obat kadaluarsa",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"Amoxicillin 500mg\",\r\n  \"kategori\": \"Antibiotik\",\r\n  \"stok\": 10,\r\n  \"harga\": 12000,\r\n  \"tanggalKadaluarsa\": \"2025-01-15\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tambah Vitamin C",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"Vitamin C 1000mg\",\r\n  \"kategori\": \"Vitamin\",\r\n  \"stok\": 80,\r\n  \"harga\": 8000,\r\n  \"tanggalKadaluarsa\": \"2027-12-01\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "medicines"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
